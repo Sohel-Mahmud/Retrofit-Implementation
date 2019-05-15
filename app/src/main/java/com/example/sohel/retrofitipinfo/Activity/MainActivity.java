@@ -8,9 +8,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.sohel.retrofitipinfo.Model.ServerResponse;
-import com.example.sohel.retrofitipinfo.Network.ApiInterface;
+import com.example.sohel.retrofitipinfo.Network.RetrofitApiInterface;
 import com.example.sohel.retrofitipinfo.R;
-import com.example.sohel.retrofitipinfo.Retrofit.RetrofitApiClient;
+import com.example.sohel.retrofitipinfo.Network.RetrofitApiClient;
 
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -44,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
     private void showMyIp() {
         progressBar.setVisibility(View.VISIBLE);
 
-        ApiInterface apiInterface = RetrofitApiClient.getClient().create(ApiInterface.class);
+        RetrofitApiInterface retrofitApiInterface = RetrofitApiClient.getClient().create(RetrofitApiInterface.class);
 
-        retrofit2.Call<ServerResponse> call = apiInterface.getMyIp();
+        retrofit2.Call<ServerResponse> call = retrofitApiInterface.getMyIp();
         call.enqueue(new Callback<ServerResponse>() {
             @Override
             public void onResponse(retrofit2.Call<ServerResponse> call, Response<ServerResponse> response) {

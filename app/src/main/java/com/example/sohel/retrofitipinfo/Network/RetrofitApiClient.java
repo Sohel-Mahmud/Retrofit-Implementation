@@ -1,4 +1,4 @@
-package com.example.sohel.retrofitipinfo.Retrofit;
+package com.example.sohel.retrofitipinfo.Network;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
